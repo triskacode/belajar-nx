@@ -20,7 +20,8 @@
       "options": {
         "buildTarget": "chatting-app:build",
         "dev": true,
-        "port": 4000
+        "port": 4000,
+        "hostname": "localhost"
       },
       "configurations": {
         "production": {

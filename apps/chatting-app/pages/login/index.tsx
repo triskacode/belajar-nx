@@ -1,11 +1,11 @@
-import { Layout } from '@belajar-nx/shared/ui/layout';
-import { ChattingAppLoginFeature } from '@belajar-nx/chatting-app/login-feature';
+import { LoginFeatureShell } from '@belajar-nx/login-feature-shell';
+import { SharedUiHomeLayout } from '@belajar-nx/shared-ui-home-layout';
 
 export function Login() {
   return (
-    <Layout title="Login">
-      <ChattingAppLoginFeature />
-    </Layout>
+    <SharedUiHomeLayout title="Login">
+      <LoginFeatureShell />
+    </SharedUiHomeLayout>
   );
 }
 

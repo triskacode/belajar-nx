@@ -1,0 +1,23 @@
+{
+  "root": "libs/register/feature-shell",
+  "sourceRoot": "libs/register/feature-shell/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/register/feature-shell/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/register/feature-shell"],
+      "options": {
+        "jestConfig": "libs/register/feature-shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

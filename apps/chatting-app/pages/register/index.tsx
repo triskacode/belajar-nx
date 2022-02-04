@@ -1,11 +1,11 @@
-import { Layout } from '@belajar-nx/shared/ui/layout';
-import { ChattingAppRegisterFeature } from '@belajar-nx/chatting-app/register-feature';
+import { RegisterFeatureShell } from '@belajar-nx/register-feature-shell';
+import { SharedUiHomeLayout } from '@belajar-nx/shared-ui-home-layout';
 
 export function Register() {
   return (
-    <Layout title="Register">
-      <ChattingAppRegisterFeature />
-    </Layout>
+    <SharedUiHomeLayout title="Register">
+      <RegisterFeatureShell />
+    </SharedUiHomeLayout>
   );
 }
 

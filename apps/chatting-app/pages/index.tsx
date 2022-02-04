@@ -1,11 +1,11 @@
-import { Layout } from '@belajar-nx/shared/ui/layout';
-import { ChattingAppHomeFeature } from '@belajar-nx/chatting-app/home-feature';
+import { HomeFeatureShell } from '@belajar-nx/home-feature-shell';
+import { SharedUiHomeLayout } from '@belajar-nx/shared-ui-home-layout';
 
 export function Index() {
   return (
-    <Layout title="Home">
-      <ChattingAppHomeFeature />
-    </Layout>
+    <SharedUiHomeLayout title="Home">
+      <HomeFeatureShell />
+    </SharedUiHomeLayout>
   );
 }
 

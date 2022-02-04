@@ -3,9 +3,14 @@
   "projects": {
     "chatting-app": "apps/chatting-app",
     "chatting-app-e2e": "apps/chatting-app-e2e",
-    "chatting-app-home-feature": "libs/chatting-app/home-feature",
-    "chatting-app-login-feature": "libs/chatting-app/login-feature",
-    "chatting-app-register-feature": "libs/chatting-app/register-feature",
-    "shared-ui-layout": "libs/shared/ui/layout"
+    "home-feature-shell": "libs/home/feature-shell",
+    "login-feature-shell": "libs/login/feature-shell",
+    "register-feature-shell": "libs/register/feature-shell",
+    "shared-data-access-auth": "libs/shared/data-access/auth",
+    "shared-data-types": "libs/shared/data-types",
+    "shared-environments": "libs/shared/environments",
+    "shared-ui-home-layout": "libs/shared/ui/home-layout",
+    "shared-utils-cookie": "libs/shared/utils/cookie",
+    "shared-utils-http": "libs/shared/utils/http"
   }
 }

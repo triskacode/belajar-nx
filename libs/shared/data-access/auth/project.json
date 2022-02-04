@@ -1,0 +1,25 @@
+{
+  "root": "libs/shared/data-access/auth",
+  "sourceRoot": "libs/shared/data-access/auth/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/data-access/auth/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/data-access/auth"],
+      "options": {
+        "jestConfig": "libs/shared/data-access/auth/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
