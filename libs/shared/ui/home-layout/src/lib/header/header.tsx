@@ -1,7 +1,15 @@
+import { useAuthUserQuery } from '@belajar-nx/shared-data-access-auth';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { StyledHeader } from './header.style';
 
 export function Header() {
+  const { data } = useAuthUserQuery();
+
+  useEffect(() => {
+    console.log('data', data);
+  }, [data]);
+
   return (
     <StyledHeader>
       <div className="container">

@@ -37,7 +37,7 @@ export function useLoginMutation() {
   return useMutation(login, {
     onSuccess: (data) => {
       setToken(data.accessToken);
-      queryClient.invalidateQueries('auth.currentUser');
+      queryClient.invalidateQueries('auth.user');
     },
     onError: (error: AxiosError) => {
       if (error.response?.status === 401) {
