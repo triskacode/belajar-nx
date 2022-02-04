@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@belajar-nx/chatting-app/home-feature": [
+        "libs/chatting-app/home-feature/src/index.ts"
+      ],
+      "@belajar-nx/chatting-app/login-feature": [
+        "libs/chatting-app/login-feature/src/index.ts"
+      ],
+      "@belajar-nx/chatting-app/register-feature": [
+        "libs/chatting-app/register-feature/src/index.ts"
+      ],
+      "@belajar-nx/shared/ui/layout": ["libs/shared/ui/layout/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

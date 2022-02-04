@@ -1,7 +1,11 @@
 {
   "version": 2,
   "projects": {
-    "chatting": "apps/chatting",
-    "chatting-e2e": "apps/chatting-e2e"
+    "chatting-app": "apps/chatting-app",
+    "chatting-app-e2e": "apps/chatting-app-e2e",
+    "chatting-app-home-feature": "libs/chatting-app/home-feature",
+    "chatting-app-login-feature": "libs/chatting-app/login-feature",
+    "chatting-app-register-feature": "libs/chatting-app/register-feature",
+    "shared-ui-layout": "libs/shared/ui/layout"
   }
 }

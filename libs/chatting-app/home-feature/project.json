@@ -1,0 +1,25 @@
+{
+  "root": "libs/chatting-app/home-feature",
+  "sourceRoot": "libs/chatting-app/home-feature/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/chatting-app/home-feature/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/chatting-app/home-feature"],
+      "options": {
+        "jestConfig": "libs/chatting-app/home-feature/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
