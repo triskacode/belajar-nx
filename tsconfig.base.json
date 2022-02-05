@@ -27,6 +27,9 @@
       "@belajar-nx/shared-data-access-auth": [
         "libs/shared/data-access/auth/src/index.ts"
       ],
+      "@belajar-nx/shared-data-access-user": [
+        "libs/shared/data-access/user/src/index.ts"
+      ],
       "@belajar-nx/shared-data-types": ["libs/shared/data-types/src/index.ts"],
       "@belajar-nx/shared-ui-home-layout": [
         "libs/shared/ui/home-layout/src/index.ts"

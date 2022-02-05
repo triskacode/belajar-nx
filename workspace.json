@@ -7,6 +7,7 @@
     "login-feature-shell": "libs/login/feature-shell",
     "register-feature-shell": "libs/register/feature-shell",
     "shared-data-access-auth": "libs/shared/data-access/auth",
+    "shared-data-access-user": "libs/shared/data-access/user",
     "shared-data-types": "libs/shared/data-types",
     "shared-environments": "libs/shared/environments",
     "shared-ui-home-layout": "libs/shared/ui/home-layout",

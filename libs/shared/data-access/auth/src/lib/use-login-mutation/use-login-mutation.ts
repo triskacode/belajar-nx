@@ -5,6 +5,7 @@ import { config } from '@belajar-nx/shared/environments';
 import { AxiosError } from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
 import * as yup from 'yup';
+import { AUTH_USER_QUERY_KEY } from '../use-auth-user-query/use-auth-user-query';
 
 export interface LoginDto {
   email: string;
@@ -37,7 +38,7 @@ export function useLoginMutation() {
   return useMutation(login, {
     onSuccess: (data) => {
       setToken(data.accessToken);
-      queryClient.invalidateQueries('auth.user');
+      queryClient.invalidateQueries(AUTH_USER_QUERY_KEY);
     },
     onError: (error: AxiosError) => {
       if (error.response?.status === 401) {
@@ -47,4 +48,3 @@ export function useLoginMutation() {
   });
 }
 
-export default useLoginMutation;
