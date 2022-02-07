@@ -15,13 +15,28 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@belajar-nx/home-feature-shell": [
+      "@belajar-nx/dashboard/feature-shell": [
+        "libs/dashboard/feature-shell/src/index.ts"
+      ],
+      "@belajar-nx/dashboard/users/feature-create-user": [
+        "libs/dashboard/users/feature-create-user/src/index.ts"
+      ],
+      "@belajar-nx/dashboard/users/feature-detail-user": [
+        "libs/dashboard/users/feature-detail-user/src/index.ts"
+      ],
+      "@belajar-nx/dashboard/users/feature-edit-user": [
+        "libs/dashboard/users/feature-edit-user/src/index.ts"
+      ],
+      "@belajar-nx/dashboard/users/feature-shell": [
+        "libs/dashboard/users/feature-shell/src/index.ts"
+      ],
+      "@belajar-nx/home/feature-shell": [
         "libs/home/feature-shell/src/index.ts"
       ],
-      "@belajar-nx/login-feature-shell": [
+      "@belajar-nx/login/feature-shell": [
         "libs/login/feature-shell/src/index.ts"
       ],
-      "@belajar-nx/register-feature-shell": [
+      "@belajar-nx/register/feature-shell": [
         "libs/register/feature-shell/src/index.ts"
       ],
       "@belajar-nx/shared-data-access-auth": [

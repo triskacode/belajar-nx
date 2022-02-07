@@ -3,6 +3,11 @@
   "projects": {
     "chatting-app": "apps/chatting-app",
     "chatting-app-e2e": "apps/chatting-app-e2e",
+    "dashboard-feature-shell": "libs/dashboard/feature-shell",
+    "dashboard-users-feature-create-user": "libs/dashboard/users/feature-create-user",
+    "dashboard-users-feature-detail-user": "libs/dashboard/users/feature-detail-user",
+    "dashboard-users-feature-edit-user": "libs/dashboard/users/feature-edit-user",
+    "dashboard-users-feature-shell": "libs/dashboard/users/feature-shell",
     "home-feature-shell": "libs/home/feature-shell",
     "login-feature-shell": "libs/login/feature-shell",
     "register-feature-shell": "libs/register/feature-shell",

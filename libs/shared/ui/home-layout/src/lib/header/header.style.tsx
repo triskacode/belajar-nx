@@ -20,7 +20,7 @@ export const StyledHeader = styled.div`
     ul {
       display: flex;
       list-style: none;
-      li {
+      li{
         margin-left: 1rem;
         letter-spacing: 0.5px;
         cursor: pointer;

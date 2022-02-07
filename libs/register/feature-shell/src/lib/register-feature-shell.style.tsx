@@ -17,6 +17,15 @@ export const StyledRegisterFeatureShell = styled.div`
       margin-bottom: 1rem;
       text-align: center;
     }
+    .errors {
+      color: #ef4444;
+      padding: 1rem;
+      background-color: #fee2e2;
+      border-radius: 5px;
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+    }
     form {
       label {
         display: flex;
@@ -36,6 +45,9 @@ export const StyledRegisterFeatureShell = styled.div`
           &:focus {
             outline: none;
           }
+        }
+        span.error {
+          color: #ef4444;
         }
       }
       button {

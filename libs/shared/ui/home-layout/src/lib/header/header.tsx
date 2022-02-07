@@ -37,6 +37,9 @@ export function Header() {
                 <Link href={'/dashboard'}>
                   <li>Dashboard</li>
                 </Link>
+                <Link href={'/dashboard/users'}>
+                  <li>Users</li>
+                </Link>
                 <li onClick={handleLogout}>Logout</li>
               </>
             ) : (

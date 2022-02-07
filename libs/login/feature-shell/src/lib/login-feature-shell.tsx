@@ -6,6 +6,7 @@ import {
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { StyledLoginFeatureShell } from './login-feature-shell.style';
 
 export function LoginFeatureShell() {
@@ -23,7 +24,10 @@ export function LoginFeatureShell() {
   });
 
   useEffect(() => {
-    if (isSuccess) router.push('/dashboard');
+    if (isSuccess) {
+      router.push('/dashboard');
+      toast('Login Success', { type: 'success' });
+    }
   }, [isSuccess, router]);
 
   return (

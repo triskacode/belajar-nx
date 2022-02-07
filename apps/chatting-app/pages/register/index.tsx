@@ -1,4 +1,4 @@
-import { RegisterFeatureShell } from '@belajar-nx/register-feature-shell';
+import { RegisterFeatureShell } from '@belajar-nx/register/feature-shell';
 import { SharedUiHomeLayout } from '@belajar-nx/shared-ui-home-layout';
 
 export function Register() {

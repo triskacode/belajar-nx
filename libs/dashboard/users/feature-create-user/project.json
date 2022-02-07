@@ -1,0 +1,25 @@
+{
+  "root": "libs/dashboard/users/feature-create-user",
+  "sourceRoot": "libs/dashboard/users/feature-create-user/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/dashboard/users/feature-create-user/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dashboard/users/feature-create-user"],
+      "options": {
+        "jestConfig": "libs/dashboard/users/feature-create-user/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

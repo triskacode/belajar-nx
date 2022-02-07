@@ -1,0 +1,25 @@
+{
+  "root": "libs/dashboard/users/feature-shell",
+  "sourceRoot": "libs/dashboard/users/feature-shell/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/dashboard/users/feature-shell/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dashboard/users/feature-shell"],
+      "options": {
+        "jestConfig": "libs/dashboard/users/feature-shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
