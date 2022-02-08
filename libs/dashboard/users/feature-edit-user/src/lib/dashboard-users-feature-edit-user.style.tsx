@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledDashboardUsersFeatureDetailUser = styled.div`
+export const StyledDashboardUsersFeatureEditUser = styled.div`
   flex: auto;
   display: flex;
   flex-direction: column;
@@ -16,6 +16,15 @@ export const StyledDashboardUsersFeatureDetailUser = styled.div`
     h1 {
       margin-bottom: 1rem;
       text-align: center;
+    }
+    .errors {
+      color: #ef4444;
+      padding: 1rem;
+      background-color: #fee2e2;
+      border-radius: 5px;
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
     }
     form {
       label {
@@ -37,18 +46,24 @@ export const StyledDashboardUsersFeatureDetailUser = styled.div`
             outline: none;
           }
         }
+        span.error {
+          color: #ef4444;
+        }
       }
       button {
         padding: 0.5rem 0.75rem;
         width: 100%;
         font-size: 16px;
         border-radius: 5px;
-        background-color: #94a3b8;
+        background-color: #3b82f6;
         border: none;
         color: #fff;
         cursor: pointer;
         font-weight: bold;
         margin-top: 0.5rem;
+      }
+      button.back {
+        background-color: #94a3b8;
       }
     }
   }

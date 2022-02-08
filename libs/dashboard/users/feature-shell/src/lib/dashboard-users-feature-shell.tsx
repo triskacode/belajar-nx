@@ -1,9 +1,36 @@
-import { useGetUsersQuery } from '@belajar-nx/shared-data-access-user';
+import {
+  useDeleteUserMutation,
+  useGetUsersQuery,
+} from '@belajar-nx/shared-data-access-user';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { StyledDashboardUsersFeatureShell } from './dashboard-users-feature-shell.style';
 
 export function DashboardUsersFeatureShell() {
   const { data: users, isLoading: isLoadingUsers } = useGetUsersQuery();
+  const {
+    mutate: deleteUser,
+    isLoading: isLoadingDelete,
+    error: errorDelete,
+    isSuccess: isSuccessDelete,
+  } = useDeleteUserMutation();
+
+  useEffect(() => {
+    if (isSuccessDelete) {
+      toast('Delete Success', { type: 'success' });
+    }
+  }, [isSuccessDelete]);
+
+  useEffect(() => {
+    if (errorDelete && errorDelete.response?.status === 500) {
+      toast('Whoops, something went wrong', { type: 'error' });
+    }
+
+    if (errorDelete && errorDelete.response?.status === 404) {
+      toast('Invalid data, please try again later', { type: 'error' });
+    }
+  }, [errorDelete]);
 
   return (
     <StyledDashboardUsersFeatureShell>
@@ -36,7 +63,12 @@ export function DashboardUsersFeatureShell() {
                     <Link href={`/dashboard/users/edit/${user.id}`}>
                       <button>edit</button>
                     </Link>
-                    <button>delete</button>
+                    <button
+                      onClick={() => deleteUser(user.id)}
+                      disabled={isLoadingDelete}
+                    >
+                      {isLoadingDelete ? 'deleting' : 'delete'}
+                    </button>
                   </td>
                 </tr>
               ))

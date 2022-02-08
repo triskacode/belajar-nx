@@ -7,7 +7,7 @@ import { USERS_QUERY_KEY } from '../use-get-users-query/use-get-users-query';
 
 const getUser = async (
   id: string,
-  signal: AbortSignal | undefined
+  signal?: AbortSignal | undefined
 ): Promise<UserEntity> => {
   const { data } = await Http.get(
     `${config.api.SERVER_API_BASE_URL}/users/${id}`,

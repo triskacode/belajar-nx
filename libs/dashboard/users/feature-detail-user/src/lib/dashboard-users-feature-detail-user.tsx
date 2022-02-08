@@ -1,21 +1,31 @@
 import { useGetUserQuery } from '@belajar-nx/shared-data-access-user';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import { StyledDashboardUsersFeatureDetailUser } from './dashboard-users-feature-detail-user.style';
 
 export function DashboardUsersFeatureDetailUser() {
-  const router = useRouter();
-  const { id } = router.query;
+  const { id } = useRouter().query;
 
-  const { data } = useGetUserQuery(id as string);
-
-  useEffect(() => {
-    console.log('data', data);
-  }, [data]);
+  const { data: user } = useGetUserQuery(id as string);
 
   return (
     <StyledDashboardUsersFeatureDetailUser>
-      <h1>Welcome to DashboardUsersFeatureDetailUser!</h1>
+      <div className="container">
+        <h1>Detail User</h1>
+        <form>
+          <label>
+            <span>ID</span>
+            <input type="text" name="id" value={user?.id} disabled />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="text" name="email" value={user?.email} disabled />
+          </label>
+          <Link href={'/dashboard/users'}>
+            <button type="button">Back</button>
+          </Link>
+        </form>
+      </div>
     </StyledDashboardUsersFeatureDetailUser>
   );
 }

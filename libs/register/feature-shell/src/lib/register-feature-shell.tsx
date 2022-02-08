@@ -11,7 +11,7 @@ import { StyledRegisterFeatureShell } from './register-feature-shell.style';
 
 export function RegisterFeatureShell() {
   const router = useRouter();
-  const { mutate: createUser, error, isSuccess } = useCreateUserMutation();
+  const { mutate: createUser, error, isSuccess, isLoading } = useCreateUserMutation();
   const form = useFormik<CreateUserDto>({
     initialValues: {
       email: '',
@@ -94,7 +94,7 @@ export function RegisterFeatureShell() {
               <span className="error">{form.errors.confirmPassword}</span>
             ) : null}
           </label>
-          <button type="submit">Register</button>
+          <button type="submit" disabled={isLoading}>{isLoading ? 'Loading' : 'Create'}</button>
         </form>
       </div>
     </StyledRegisterFeatureShell>

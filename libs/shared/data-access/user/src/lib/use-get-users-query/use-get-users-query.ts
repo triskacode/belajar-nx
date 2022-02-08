@@ -5,7 +5,7 @@ import { config } from '@belajar-nx/shared/environments';
 import { useQuery } from 'react-query';
 
 const getUsers = async (
-  signal: AbortSignal | undefined
+  signal?: AbortSignal | undefined
 ): Promise<UserEntity[]> => {
   const { data } = await Http.get(`${config.api.SERVER_API_BASE_URL}/users`, {
     signal,
