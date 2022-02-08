@@ -23,7 +23,7 @@ const editUser = async (
   paylaod: EditUserDto
 ): Promise<UserEntity> => {
   const { data } = await Http.patch(
-    `${config.api.SERVER_API_BASE_URL}/users/${id}`,
+    `${config.api.SERVER_HTTP}/users/${id}`,
     paylaod,
     {
       headers: {

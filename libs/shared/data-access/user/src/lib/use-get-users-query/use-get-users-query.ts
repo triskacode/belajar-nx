@@ -7,7 +7,7 @@ import { useQuery } from 'react-query';
 const getUsers = async (
   signal?: AbortSignal | undefined
 ): Promise<UserEntity[]> => {
-  const { data } = await Http.get(`${config.api.SERVER_API_BASE_URL}/users`, {
+  const { data } = await Http.get(`${config.api.SERVER_HTTP}/users`, {
     signal,
     headers: {
       Authorization: `Bearer ${getToken()}`,

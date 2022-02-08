@@ -34,7 +34,7 @@ export const createUserValidationSchema = yup.object({
 
 const createUser = async (paylaod: CreateUserDto): Promise<UserEntity> => {
   const { data } = await Http.post(
-    `${config.api.SERVER_API_BASE_URL}/users`,
+    `${config.api.SERVER_HTTP}/users`,
     paylaod
   );
 

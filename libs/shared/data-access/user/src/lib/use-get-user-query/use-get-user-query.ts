@@ -10,7 +10,7 @@ const getUser = async (
   signal?: AbortSignal | undefined
 ): Promise<UserEntity> => {
   const { data } = await Http.get(
-    `${config.api.SERVER_API_BASE_URL}/users/${id}`,
+    `${config.api.SERVER_HTTP}/users/${id}`,
     {
       signal,
       headers: {

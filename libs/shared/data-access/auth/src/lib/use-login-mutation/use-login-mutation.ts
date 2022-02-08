@@ -25,7 +25,7 @@ export const loginValidationSchema = yup.object({
 
 const login = async (paylaod: LoginDto): Promise<AccessTokenEntity> => {
   const { data } = await Http.post(
-    `${config.api.SERVER_API_BASE_URL}/auth/login`,
+    `${config.api.SERVER_HTTP}/auth/login`,
     paylaod
   );
 

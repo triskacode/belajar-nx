@@ -6,7 +6,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { USERS_QUERY_KEY } from '../use-get-users-query/use-get-users-query';
 
 const deleteUser = async (id: string): Promise<void> => {
-  return await Http.delete(`${config.api.SERVER_API_BASE_URL}/users/${id}`, {
+  return await Http.delete(`${config.api.SERVER_HTTP}/users/${id}`, {
     headers: {
       Authorization: `Bearer ${getToken()}`,
     },
