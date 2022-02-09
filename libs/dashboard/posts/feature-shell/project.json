@@ -1,0 +1,25 @@
+{
+  "root": "libs/dashboard/posts/feature-shell",
+  "sourceRoot": "libs/dashboard/posts/feature-shell/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/dashboard/posts/feature-shell/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dashboard/posts/feature-shell"],
+      "options": {
+        "jestConfig": "libs/dashboard/posts/feature-shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -2,8 +2,8 @@ import { AccessTokenEntity } from '@belajar-nx/shared-data-types';
 import { deleteToken, setToken } from '@belajar-nx/shared-utils-cookie';
 import { Http } from '@belajar-nx/shared-utils-http';
 import { config } from '@belajar-nx/shared/environments';
-import { AxiosError } from 'axios';
-import { useMutation, useQueryClient } from 'react-query';
+import { AxiosError, AxiosResponse } from 'axios';
+import { useMutation, UseMutationResult, useQueryClient } from 'react-query';
 import * as yup from 'yup';
 import { AUTH_USER_QUERY_KEY } from '../use-auth-user-query/use-auth-user-query';
 
@@ -23,21 +23,22 @@ export const loginValidationSchema = yup.object({
     .min(6, 'Password must be at least 6 characters'),
 });
 
-const login = async (paylaod: LoginDto): Promise<AccessTokenEntity> => {
-  const { data } = await Http.post(
-    `${config.api.SERVER_HTTP}/auth/login`,
-    paylaod
-  );
-
-  return data;
+const login = (
+  paylaod: LoginDto
+): Promise<AxiosResponse<AccessTokenEntity>> => {
+  return Http.post(`${config.api.SERVER_HTTP}/auth/login`, paylaod);
 };
 
-export function useLoginMutation() {
+export function useLoginMutation(): UseMutationResult<
+  AxiosResponse<AccessTokenEntity>,
+  AxiosError,
+  LoginDto
+> {
   const queryClient = useQueryClient();
 
   return useMutation(login, {
     onSuccess: (data) => {
-      setToken(data.accessToken);
+      setToken(data.data.accessToken);
       queryClient.invalidateQueries(AUTH_USER_QUERY_KEY);
     },
     onError: (error: AxiosError) => {
@@ -47,4 +48,3 @@ export function useLoginMutation() {
     },
   });
 }
-

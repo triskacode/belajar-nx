@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/utils/graphql",
+  "sourceRoot": "libs/shared/utils/graphql/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/utils/graphql/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/utils/graphql"],
+      "options": {
+        "jestConfig": "libs/shared/utils/graphql/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

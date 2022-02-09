@@ -1,10 +1,9 @@
 import { UserEntity } from '@belajar-nx/shared-data-types';
 import { deleteToken, getToken } from '@belajar-nx/shared-utils-cookie';
 import { Http } from '@belajar-nx/shared-utils-http';
-import { config } from '@belajar-nx/shared/environments';
-import { AxiosError } from 'axios';
-import { useMutation, useQueryClient } from 'react-query';
-import * as yup from "yup";
+import { AxiosError, AxiosResponse } from 'axios';
+import { useMutation, UseMutationResult, useQueryClient } from 'react-query';
+import * as yup from 'yup';
 import { USERS_QUERY_KEY } from '../use-get-users-query/use-get-users-query';
 
 export interface EditUserDto {
@@ -18,24 +17,20 @@ export const editUserValidationSchema = yup.object({
     .required('Email is required'),
 });
 
-const editUser = async (
+const editUser = (
   id: string,
   paylaod: EditUserDto
-): Promise<UserEntity> => {
-  const { data } = await Http.patch(
-    `${config.api.SERVER_HTTP}/users/${id}`,
-    paylaod,
-    {
-      headers: {
-        Authorization: `Bearer ${getToken()}`,
-      },
-    }
-  );
-
-  return data;
+): Promise<AxiosResponse<UserEntity>> => {
+  return Http.patch(`/users/${id}`, paylaod, {
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+    },
+  });
 };
 
-export function useEditUserMutation(id: string) {
+export function useEditUserMutation(
+  id: string
+): UseMutationResult<AxiosResponse<UserEntity>, AxiosError, EditUserDto> {
   const queryClient = useQueryClient();
 
   return useMutation((payload: EditUserDto) => editUser(id, payload), {

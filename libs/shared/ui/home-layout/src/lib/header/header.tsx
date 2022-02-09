@@ -40,6 +40,9 @@ export function Header() {
                 <Link href={'/dashboard/users'}>
                   <li>Users</li>
                 </Link>
+                <Link href={'/dashboard/posts'}>
+                  <li>Posts</li>
+                </Link>
                 <li onClick={handleLogout}>Logout</li>
               </>
             ) : (

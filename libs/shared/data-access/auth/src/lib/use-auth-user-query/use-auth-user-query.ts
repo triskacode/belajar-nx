@@ -2,28 +2,23 @@ import { UserEntity } from '@belajar-nx/shared-data-types';
 import { getToken } from '@belajar-nx/shared-utils-cookie';
 import { Http } from '@belajar-nx/shared-utils-http';
 import { config } from '@belajar-nx/shared/environments';
-import { AxiosError } from 'axios';
-import { useQuery } from 'react-query';
+import { AxiosError, AxiosResponse } from 'axios';
+import { useQuery, UseQueryResult } from 'react-query';
 
-const getUser = async (
+const getUser = (
   signal?: AbortSignal | undefined
-): Promise<UserEntity> => {
-  const { data } = await Http.get(
-    `${config.api.SERVER_HTTP}/auth/user`,
-    {
-      signal,
-      headers: {
-        Authorization: `Bearer ${getToken()}`,
-      },
-    }
-  );
-
-  return data;
+): Promise<AxiosResponse<UserEntity>> => {
+  return Http.get(`${config.api.SERVER_HTTP}/auth/user`, {
+    signal,
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+    },
+  });
 };
 
 export const AUTH_USER_QUERY_KEY = 'auth.user';
 
-export function useAuthUserQuery() {
+export function useAuthUserQuery(): UseQueryResult<UserEntity, AxiosError> {
   return useQuery(AUTH_USER_QUERY_KEY, ({ signal }) => getUser(signal), {
     enabled: !!getToken(),
     retry: (failureCount: number, error: AxiosError) => {
@@ -33,5 +28,6 @@ export function useAuthUserQuery() {
 
       return failureCount < 3;
     },
+    select: (data) => data.data,
   });
 }

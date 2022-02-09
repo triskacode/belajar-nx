@@ -42,43 +42,45 @@ export function DashboardUsersFeatureShell() {
             <button>create</button>
           </Link>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th style={{ width: '100px' }}>ID</th>
-              <th>Email</th>
-              <th style={{ width: '250px' }}>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {!isLoadingUsers && users && users?.length > 0 ? (
-              users.map((user, key) => (
-                <tr key={key}>
-                  <td style={{ textAlign: 'center' }}>{key + 1}</td>
-                  <td>{user.email}</td>
-                  <td style={{ textAlign: 'center' }}>
-                    <Link href={`/dashboard/users/detail/${user.id}`}>
-                      <button>detail</button>
-                    </Link>
-                    <Link href={`/dashboard/users/edit/${user.id}`}>
-                      <button>edit</button>
-                    </Link>
-                    <button
-                      onClick={() => deleteUser(user.id)}
-                      disabled={isLoadingDelete}
-                    >
-                      {isLoadingDelete ? 'deleting' : 'delete'}
-                    </button>
-                  </td>
-                </tr>
-              ))
-            ) : (
-              <tr className="empty-data">
-                <td colSpan={3}>data kosong</td>
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th style={{ width: '100px' }}>ID</th>
+                <th style={{ minWidth: '300px' }}>Email</th>
+                <th style={{ width: '250px' }}>Action</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {!isLoadingUsers && users && users?.length > 0 ? (
+                users.map((user, key) => (
+                  <tr key={key}>
+                    <td style={{ textAlign: 'center' }}>{key + 1}</td>
+                    <td>{user.email}</td>
+                    <td style={{ textAlign: 'center' }}>
+                      <Link href={`/dashboard/users/detail/${user.id}`}>
+                        <button>detail</button>
+                      </Link>
+                      <Link href={`/dashboard/users/edit/${user.id}`}>
+                        <button>edit</button>
+                      </Link>
+                      <button
+                        onClick={() => deleteUser(user.id)}
+                        disabled={isLoadingDelete}
+                      >
+                        {isLoadingDelete ? 'deleting' : 'delete'}
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr className="empty-data">
+                  <td colSpan={3}>data kosong</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </StyledDashboardUsersFeatureShell>
   );

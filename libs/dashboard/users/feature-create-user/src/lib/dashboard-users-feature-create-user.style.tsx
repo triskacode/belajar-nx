@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledDashboardUsersFeatureCreateUser = styled.div`
-flex: auto;
+  flex: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

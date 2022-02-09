@@ -4,6 +4,10 @@
     "chatting-app": "apps/chatting-app",
     "chatting-app-e2e": "apps/chatting-app-e2e",
     "dashboard-feature-shell": "libs/dashboard/feature-shell",
+    "dashboard-posts-feature-create-post": "libs/dashboard/posts/feature-create-post",
+    "dashboard-posts-feature-detail-post": "libs/dashboard/posts/feature-detail-post",
+    "dashboard-posts-feature-edit-post": "libs/dashboard/posts/feature-edit-post",
+    "dashboard-posts-feature-shell": "libs/dashboard/posts/feature-shell",
     "dashboard-users-feature-create-user": "libs/dashboard/users/feature-create-user",
     "dashboard-users-feature-detail-user": "libs/dashboard/users/feature-detail-user",
     "dashboard-users-feature-edit-user": "libs/dashboard/users/feature-edit-user",
@@ -12,11 +16,13 @@
     "login-feature-shell": "libs/login/feature-shell",
     "register-feature-shell": "libs/register/feature-shell",
     "shared-data-access-auth": "libs/shared/data-access/auth",
+    "shared-data-access-post": "libs/shared/data-access/post",
     "shared-data-access-user": "libs/shared/data-access/user",
     "shared-data-types": "libs/shared/data-types",
     "shared-environments": "libs/shared/environments",
     "shared-ui-home-layout": "libs/shared/ui/home-layout",
     "shared-utils-cookie": "libs/shared/utils/cookie",
+    "shared-utils-graphql": "libs/shared/utils/graphql",
     "shared-utils-http": "libs/shared/utils/http"
   }
 }

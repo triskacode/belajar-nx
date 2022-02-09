@@ -32,8 +32,6 @@ export function DashboardUsersFeatureEditUser() {
 
   useEffect(() => {
     if (user && user.email) {
-      console.log(user);
-
       form.setValues({
         email: user.email,
       });

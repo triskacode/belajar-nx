@@ -1,0 +1,25 @@
+{
+  "root": "libs/dashboard/posts/feature-detail-post",
+  "sourceRoot": "libs/dashboard/posts/feature-detail-post/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/dashboard/posts/feature-detail-post/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dashboard/posts/feature-detail-post"],
+      "options": {
+        "jestConfig": "libs/dashboard/posts/feature-detail-post/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
