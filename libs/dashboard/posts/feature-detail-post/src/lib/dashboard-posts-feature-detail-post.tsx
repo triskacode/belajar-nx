@@ -5,7 +5,6 @@ import { StyledDashboardPostsFeatureDetailPost } from './dashboard-posts-feature
 
 export function DashboardPostsFeatureDetailPost() {
   const { id } = useRouter().query;
-
   const { data: post } = useGetPostQuery(id as string);
 
   return (
@@ -32,12 +31,12 @@ export function DashboardPostsFeatureDetailPost() {
           </label>
           <label>
             <span>Content</span>
-            <input type="text" name="content" value={post?.content} disabled />
+            <textarea name="content" rows={5} value={post?.content} disabled />
           </label>
-          <Link href={'/dashboard/posts'}>
-            <button type="button">Back</button>
-          </Link>
         </form>
+        <Link href={'/dashboard/posts'}>
+          <button type="button">Back</button>
+        </Link>
       </div>
     </StyledDashboardPostsFeatureDetailPost>
   );

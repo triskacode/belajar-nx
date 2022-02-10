@@ -35,7 +35,9 @@ export const StyledDashboardPostsFeatureCreatePost = styled.div`
         span {
           font-size: 14px;
         }
-        input {
+        input,
+        textarea,
+        select {
           padding: 0.5rem 0.75rem;
           border-radius: 5px;
           border: none;
@@ -46,25 +48,35 @@ export const StyledDashboardPostsFeatureCreatePost = styled.div`
             outline: none;
           }
         }
+        select {
+          appearance: none;
+          background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGZpbGw9J25vbmUnIHZpZXdCb3g9JzAgMCAyMCAyMCc+PHBhdGggc3Ryb2tlPScjNkI3MjgwJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnIHN0cm9rZS13aWR0aD0nMS41JyBkPSdtNiA4IDQgNCA0LTQnLz48L3N2Zz4=);
+          background-position: right 0.5rem center;
+          background-repeat: no-repeat;
+          background-size: 1.5em 1.5em;
+        }
+        textarea {
+          resize: vertical;
+        }
         span.error {
           color: #ef4444;
         }
       }
-      button {
-        padding: 0.5rem 0.75rem;
-        width: 100%;
-        font-size: 16px;
-        border-radius: 5px;
-        background-color: #3b82f6;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        font-weight: bold;
-        margin-top: 0.5rem;
-      }
-      button.back {
-        background-color: #94a3b8;
-      }
+    }
+    button {
+      padding: 0.5rem 0.75rem;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #3b82f6;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    button.back {
+      background-color: #94a3b8;
     }
   }
 `;

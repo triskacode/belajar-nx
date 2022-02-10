@@ -5,7 +5,6 @@ import { StyledDashboardUsersFeatureDetailUser } from './dashboard-users-feature
 
 export function DashboardUsersFeatureDetailUser() {
   const { id } = useRouter().query;
-
   const { data: user } = useGetUserQuery(id as string);
 
   return (
